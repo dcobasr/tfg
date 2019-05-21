@@ -119,7 +119,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		botonesCrud = new JBotonesCrud();
 		botonesCrud.btEliminarTodo.setActionCommand("eliminarProyectos");
 		botonesCrud.btCancelar.setActionCommand("cancelarProyecto");
-		botonesCrud.btAnadir.setActionCommand("anadirProyecto");
+		botonesCrud.btConfirmar.setActionCommand("confirmarProyecto");
 		botonesCrud.btEliminar.setActionCommand("eliminarProyecto");
 		botonesCrud.btEditar.setActionCommand("editarProyecto");
 		botonesCrud.btNuevo.setActionCommand("nuevoProyecto");
@@ -227,7 +227,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 				modoEdicion(true);
 				break;
 				
-			case "anadirProyecto":
+			case "confirmarProyecto":
 				if (tfNombre.getText().equals("")) {
 					JOptionPane.showMessageDialog(null,
 							"El campo nombre es obligatorio",

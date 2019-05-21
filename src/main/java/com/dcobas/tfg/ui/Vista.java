@@ -49,7 +49,7 @@ public class Vista extends JFrame {
 		
 		jEstado = new JEstado();
 		constantes= new Constantes();
-		jEstado.setMensajeError("Bienvenido a Proyectos "+constantes.versionAplicacion);
+		jEstado.setMensajeConfirmacion("Bienvenido a Proyectos "+constantes.versionAplicacion+" de "+constantes.creador);
 		contentPane.add(jEstado, BorderLayout.SOUTH);
 		
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);

@@ -51,12 +51,12 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 		setLayout(null);
 		
 		botonesCrud = new JBotonesCrud();
-		botonesCrud.btEliminarTodo.setActionCommand("eliminarEmpleados");
-		botonesCrud.btCancelar.setActionCommand("cancelarEmpleado");
-		botonesCrud.btAnadir.setActionCommand("anadirEmpleado");
-		botonesCrud.btEliminar.setActionCommand("eliminarEmpleado");
-		botonesCrud.btEditar.setActionCommand("editarEmpleado");
 		botonesCrud.btNuevo.setActionCommand("nuevoEmpleado");
+		botonesCrud.btEditar.setActionCommand("editarEmpleado");
+		botonesCrud.btEliminar.setActionCommand("eliminarEmpleado");
+		botonesCrud.btConfirmar.setActionCommand("confirmarEmpleado");
+		botonesCrud.btCancelar.setActionCommand("cancelarEmpleado");
+		botonesCrud.btEliminarTodo.setActionCommand("eliminarEmpleados");
 		botonesCrud.setBounds(387, 273, 225, 109);
 		add(botonesCrud);
 		
@@ -136,6 +136,13 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 		modoInicio(true);
 	}
 	
+	private void modoInicio(boolean edicion) {
+		modoEdicion(!edicion);
+		
+		botonesCrud.btEditar.setEnabled(!edicion);
+		botonesCrud.btEliminar.setEnabled(!edicion);
+	}
+	
 	private void modoEdicion(boolean edicion) {
 		tfNombre.setEditable(edicion);
 		tfApellidos.setEditable(edicion);
@@ -145,13 +152,6 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 		tfDocumentacion.setEditable(edicion);
 		activarJFileChooser=edicion;
 		botonesCrud.modoEdicion(edicion);
-	}
-	
-	private void modoInicio(boolean edicion) {
-		modoEdicion(!edicion);
-		
-		botonesCrud.btEditar.setEnabled(!edicion);
-		botonesCrud.btEliminar.setEnabled(!edicion);
 	}
 	
 	private void cargar(Empleado empleado) {
@@ -213,7 +213,7 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 				modoEdicion(true);
 				accion = Accion.MODIFICAR;
 				break;
-			case "anadirEmpleado":
+			case "confirmarEmpleado":
 				
 				if (tfNombre.getText().equals("")) {
 					JOptionPane.showMessageDialog(null,

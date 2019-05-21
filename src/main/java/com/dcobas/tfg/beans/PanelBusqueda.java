@@ -14,9 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-/**
- * Panel de listado y búsqueda de elementos de la aplicación
- */
 public class PanelBusqueda<T> extends JPanel implements KeyListener {
 	public JTextField tfBusqueda;
 	public JScrollPane scrollPane;
@@ -104,18 +101,14 @@ public class PanelBusqueda<T> extends JPanel implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-			buscar();
-		}
+		buscar();
 	}
 }

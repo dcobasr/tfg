@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 public class JEstado extends JPanel {
 	public JLabel lbEstado;
-
+	
 	public JEstado() {
 		setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
@@ -21,7 +21,7 @@ public class JEstado extends JPanel {
 	}
 	
 	public void setMensajeConfirmacion(String mensaje) {
-		lbEstado.setForeground(Color.BLACK);
+		lbEstado.setForeground(new Color(31, 106, 218));
 		lbEstado.setText(mensaje);
 	}
 	
