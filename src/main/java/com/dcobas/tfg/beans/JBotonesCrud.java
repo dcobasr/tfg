@@ -15,9 +15,10 @@ public class JBotonesCrud extends JPanel {
 	public JButton btCancelar;
 	public JButton btEliminarTodo;
 	
-	public final String RUTA = "C:\\Users\\AlumnoT\\eclipse-workspace\\Ev2\\tfg\\resources\\icons\\";
+//	public final String RUTA = "C:\\Users\\AlumnoT\\eclipse-workspace\\Ev2\\tfg\\resources\\icons\\";
 //	public final String RUTA = "C:\\tfg\\tfg\\resources\\icons\\";
-	
+	public final String RUTA = "resources\\icons\\";
+			
 	public JBotonesCrud() {
 		
 		setLayout(null);
