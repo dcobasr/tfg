@@ -2,6 +2,7 @@ package com.dcobas.tfg.ui;
 
 import java.awt.BorderLayout;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -17,6 +18,9 @@ import com.dcobas.tfg.beans.PanelEmpleados;
 import com.dcobas.tfg.beans.PanelProyectos;
 
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import com.dcobas.tfg.beans.PanelAnadirEmpleado;
 
 public class Vista extends JFrame {
@@ -38,8 +42,10 @@ public class Vista extends JFrame {
 		
 		setMinimumSize(new Dimension(600, 350));
 		setPreferredSize(new Dimension(800, 400));
-		setTitle("Proyectos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Prodeck");
+		Image icon = new ImageIcon(Proyecto.class.getResource("icons\\list-add.png")).getImage();
+        setIconImage(icon);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 875, 484);
 		
 		contentPane = new JPanel();
