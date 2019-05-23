@@ -39,12 +39,25 @@ public class Vista extends JFrame {
 	public Modelo modelo;
 	
 	public Vista() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Vista.class.getResource("/com/sun/java/swing/plaf/windows/icons/Computer.gif")));
 		
 		setMinimumSize(new Dimension(600, 350));
 		setPreferredSize(new Dimension(800, 400));
+		
 		setTitle("Prodeck");
-		Image icon = new ImageIcon(Proyecto.class.getResource("icons\\list-add.png")).getImage();
-        setIconImage(icon);
+		System.out.println(getClass());
+		System.out.println(getClass().getPackage());
+		System.out.println(getClass().getResource("edit-6.png"));
+		System.out.println(getClass().getResource("resources/edit-6.png"));
+		System.out.println(getClass().getResource("../../../../resources/edit-6.png"));
+		System.out.println(getClass().getResource("../../../../../../../resources/edit-6.png"));
+		
+//		En el mismo paquete:
+//		Image icon = new ImageIcon(getClass().getResource("edit-6.png")).getImage();
+		
+//		En el paquete resources
+//		Image icon = new ImageIcon(getClass().getResource("../../../../resources/edit-6.png")).getImage();
+//        setIconImage(icon);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 875, 484);
 		
