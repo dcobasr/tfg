@@ -13,6 +13,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 

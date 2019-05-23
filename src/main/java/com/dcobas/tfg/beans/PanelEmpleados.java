@@ -179,7 +179,7 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 		lImagen.setIcon(imageIcon);
 	}
 	
-	private void limpiar() {
+	public void limpiar() {
 		tfNombre.setText("");
 		tfApellidos.setText("");
 		tfEdad.setText("");

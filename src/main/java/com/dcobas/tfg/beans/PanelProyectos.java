@@ -112,7 +112,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		add(tfEmpleados);
 		tfEmpleados.setColumns(10);
 		
-		panelBusqueda = new PanelBusqueda();
+		panelBusqueda = new PanelBusqueda<Proyecto>();
 		panelBusqueda.setBounds(566, 211, 260, 151);
 		add(panelBusqueda);
 		
@@ -199,6 +199,17 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		panelAnadirEmpleado.limpiarEmpleados();
 		
 		modoInicio(true);
+	}
+	
+	public void limpiar() {
+		tfNombre.setText("");
+		tfEmpresa.setText("");
+		tfTipo.setText("");
+		taDescripcion.setText("");
+		tfFechaInicio.setText("");
+		tfEmpleados.setText("");
+		lImagen.setIcon(null);
+		ficheroSeleccionado=null;
 	}
 
 	@Override

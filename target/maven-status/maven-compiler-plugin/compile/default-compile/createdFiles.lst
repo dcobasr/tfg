@@ -12,6 +12,7 @@ com\dcobas\tfg\beans\JEstado.class
 com\dcobas\tfg\Aplicacion.class
 com\dcobas\tfg\HibernateUtil.class
 com\dcobas\tfg\base\Proyecto.class
+com\dcobas\tfg\Controlador$1.class
 com\dcobas\tfg\base\Empleado.class
 com\dcobas\tfg\beans\JBotonesCrud.class
 com\dcobas\tfg\beans\PanelEmpleados.class

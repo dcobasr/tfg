@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import com.dcobas.tfg.Constantes;
 import com.dcobas.tfg.Modelo;
@@ -23,7 +25,7 @@ import java.awt.Toolkit;
 
 import com.dcobas.tfg.beans.PanelAnadirEmpleado;
 
-public class Vista extends JFrame {
+public class Vista extends JFrame{
 
 	public JPanel contentPane;
 	
@@ -68,7 +70,7 @@ public class Vista extends JFrame {
 		
 		jEstado = new JEstado();
 		constantes= new Constantes();
-		jEstado.setMensajeConfirmacion("Bienvenido a Proyectos "+constantes.versionAplicacion+" de "+constantes.creador);
+		jEstado.setMensajeConfirmacion("Bienvenido a "+constantes.nombreAplicacion+" "+constantes.versionAplicacion+" de "+constantes.creador);
 		contentPane.add(jEstado, BorderLayout.SOUTH);
 		
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
