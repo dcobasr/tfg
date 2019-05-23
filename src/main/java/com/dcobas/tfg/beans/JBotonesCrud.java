@@ -25,41 +25,41 @@ public class JBotonesCrud extends JPanel {
 		setLayout(null);
 		
 		btNuevo = new JButton("");
-		btNuevo.setIcon(new ImageIcon(RUTA + "list-add.png"));
+//		btNuevo.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/list-add.png")));
 		btNuevo.setActionCommand("nuevo");
 		btNuevo.setBounds(10, 10, 46, 36);
 		add(btNuevo);
 		
 		btEditar = new JButton("");
-		btEditar.setIcon(new ImageIcon(RUTA + "edit-6.png"));
+//		btEditar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/edit-6.png")));
 		btEditar.setEnabled(false);
 		btEditar.setActionCommand("editar");
 		btEditar.setBounds(90, 10, 46, 36);
 		add(btEditar);
 		
 		btEliminar = new JButton("");
-		btEliminar.setIcon(new ImageIcon(RUTA + "draw-eraser-2.png"));
+//		btEliminar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/draw-eraser-2.png")));
 		btEliminar.setEnabled(false);
 		btEliminar.setActionCommand("eliminar");
 		btEliminar.setBounds(170, 10, 46, 36);
 		add(btEliminar);
 		
 		btConfirmar = new JButton("");
-		btConfirmar.setIcon(new ImageIcon(RUTA + "dialog-accept.png"));
+//		btConfirmar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/dialog-accept.png")));
 		btConfirmar.setEnabled(false);
 		btConfirmar.setActionCommand("anadir");
 		btConfirmar.setBounds(10, 70, 46, 36);
 		add(btConfirmar);
 		
 		btCancelar = new JButton("");
-		btCancelar.setIcon(new ImageIcon(RUTA + "dialog-cancel-7.png"));
+//		btCancelar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/dialog-cancel-7.png")));
 		btCancelar.setEnabled(false);
 		btCancelar.setActionCommand("cancelar");
 		btCancelar.setBounds(90, 70, 46, 36);
 		add(btCancelar);
 		
 		btEliminarTodo = new JButton("");
-		btEliminarTodo.setIcon(new ImageIcon(RUTA + "edit-delete-2.png"));
+//		btEliminarTodo.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/edit-delete-2.png")));
 		btEliminarTodo.setActionCommand("eliminar");
 		btEliminarTodo.setBounds(170, 70, 46, 36);
 		add(btEliminarTodo);
