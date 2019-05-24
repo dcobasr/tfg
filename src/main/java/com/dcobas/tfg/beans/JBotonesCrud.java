@@ -15,10 +15,6 @@ public class JBotonesCrud extends JPanel {
 	public JButton btConfirmar;
 	public JButton btCancelar;
 	public JButton btEliminarTodo;
-	
-//	public final String RUTA = "C:\\Users\\AlumnoT\\eclipse-workspace\\Ev2\\tfg\\resources\\icons\\";
-//	public final String RUTA = "C:\\tfg\\tfg\\resources\\icons\\";
-	public final String RUTA = "resources\\icons\\";
 			
 	public JBotonesCrud() {
 		
@@ -32,7 +28,6 @@ public class JBotonesCrud extends JPanel {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-//		btNuevo.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/list-add.png")));
 		btNuevo.setActionCommand("nuevo");
 		btNuevo.setBounds(10, 10, 46, 36);
 		add(btNuevo);
@@ -45,7 +40,6 @@ public class JBotonesCrud extends JPanel {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-//		btEditar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/edit-6.png")));
 		btEditar.setEnabled(false);
 		btEditar.setActionCommand("editar");
 		btEditar.setBounds(90, 10, 46, 36);
@@ -59,7 +53,6 @@ public class JBotonesCrud extends JPanel {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-//		btEliminar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/draw-eraser-2.png")));
 		btEliminar.setEnabled(false);
 		btEliminar.setActionCommand("eliminar");
 		btEliminar.setBounds(170, 10, 46, 36);
@@ -73,7 +66,6 @@ public class JBotonesCrud extends JPanel {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-//		btConfirmar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/dialog-accept.png")));
 		btConfirmar.setEnabled(false);
 		btConfirmar.setActionCommand("anadir");
 		btConfirmar.setBounds(10, 70, 46, 36);
@@ -87,7 +79,6 @@ public class JBotonesCrud extends JPanel {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-//		btCancelar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/dialog-cancel-7.png")));
 		btCancelar.setEnabled(false);
 		btCancelar.setActionCommand("cancelar");
 		btCancelar.setBounds(90, 70, 46, 36);
@@ -101,7 +92,6 @@ public class JBotonesCrud extends JPanel {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-//		btEliminarTodo.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/icons/edit-delete-2.png")));
 		btEliminarTodo.setActionCommand("eliminar");
 		btEliminarTodo.setBounds(170, 70, 46, 36);
 		add(btEliminarTodo);

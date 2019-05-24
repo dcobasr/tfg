@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -54,7 +55,6 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		setLayout(null);
 		
 		lImagen = new JLabel("");
-		lImagen.setEnabled(false);
 		lImagen.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lImagen.setBounds(10, 11, 250, 250);
 		add(lImagen);
@@ -137,6 +137,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 	private void inicializar() {
 		botonesCrud.addListeners(this);
 		panelBusqueda.addListener(this);
+		lImagen.addMouseListener(this);
 		
 		panelBusqueda.inicializar(modelo.getProyectos());
 		modoInicio(true);
@@ -149,8 +150,8 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		taDescripcion.setEditable(edicion);
 		tfFechaInicio.setEditable(edicion);
 		tfEmpleados.setEditable(edicion);
-		lImagen.setEnabled(edicion);
 		
+		activarJFileChooser=edicion;
 		panelAnadirEmpleado.modoEdicion(edicion);
 		botonesCrud.modoEdicion(edicion);
 	}
@@ -171,12 +172,11 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		taDescripcion.setText(proyecto.getDescripcion());
 		tfFechaInicio.setText(proyecto.getFechaInicio());
 		tfEmpleados.setText(proyecto.getDescripcion());
-		
+		panelAnadirEmpleado.anadirEmpleados((proyecto.getEmpleados()));
 		ImageIcon imageIcon = new ImageIcon(
 				new ImageIcon(Util.rutaImagenes+proyecto.getNombreImagen()).
 				getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
 		lImagen.setIcon(imageIcon);
-		panelAnadirEmpleado.anadirEmpleados((proyecto.getEmpleados()));
 	}
 	
 	public void lanzarFileChooser() {
@@ -296,6 +296,15 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 				proyecto.setEmpleados(panelAnadirEmpleado.getListadoEmpleados());
 				
 				modelo.guardar(proyecto);
+				
+				try {
+					if (ficheroSeleccionado != null)
+					Util.copiarImagen(ficheroSeleccionado.getAbsolutePath(),nombreImagen);
+				} catch (IOException ioe) {
+					System.out.println("Error al guardar la imagen (puede que esté repetida).");
+				}
+				
+				limpiar();
 				refrescarPanel();
 				break;
 			case "eliminarProyecto":
@@ -333,13 +342,14 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		
-		Proyecto proyecto = panelBusqueda.getSeleccionado();
-		if (proyecto == null)
-			return;
-		
-		modoEdicion(false);
-		cargar(proyecto);
+		if(e.getSource()==panelBusqueda.lista) {
+			Proyecto proyecto = panelBusqueda.getSeleccionado();
+			if (proyecto == null)
+				return;
+			
+			modoEdicion(false);
+			cargar(proyecto);
+		}
 	}
 
 	@Override

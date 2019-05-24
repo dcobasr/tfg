@@ -150,6 +150,7 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 		tfEmail.setEditable(edicion);
 		tfSector.setEditable(edicion);
 		tfDocumentacion.setEditable(edicion);
+		
 		activarJFileChooser=edicion;
 		botonesCrud.modoEdicion(edicion);
 	}
@@ -324,12 +325,12 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		if(e.getSource()==panelBusqueda.lista) {
-		Empleado empleadoSeleccionado = panelBusqueda.getSeleccionado();
-		if (empleadoSeleccionado == null)
-			return;
-		
-		modoEdicion(false);
-		cargar(empleadoSeleccionado);
+			Empleado empleadoSeleccionado = panelBusqueda.getSeleccionado();
+			if (empleadoSeleccionado == null)
+				return;
+			
+			modoEdicion(false);
+			cargar(empleadoSeleccionado);
 		}
 	}
 

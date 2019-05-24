@@ -47,12 +47,12 @@ public class Vista extends JFrame{
 		setPreferredSize(new Dimension(800, 400));
 		
 		setTitle("Prodeck");
-		System.out.println(getClass());
-		System.out.println(getClass().getPackage());
-		System.out.println(getClass().getResource("edit-6.png"));
-		System.out.println(getClass().getResource("resources/edit-6.png"));
-		System.out.println(getClass().getResource("../../../../resources/edit-6.png"));
-		System.out.println(getClass().getResource("../../../../../../../resources/edit-6.png"));
+//		System.out.println(getClass());
+//		System.out.println(getClass().getPackage());
+//		System.out.println(getClass().getResource("edit-6.png"));
+//		System.out.println(getClass().getResource("resources/edit-6.png"));
+//		System.out.println(getClass().getResource("../../../../resources/edit-6.png"));
+//		System.out.println(getClass().getResource("../../../../../../../resources/edit-6.png"));
 		
 //		En el mismo paquete:
 //		Image icon = new ImageIcon(getClass().getResource("edit-6.png")).getImage();
