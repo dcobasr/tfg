@@ -188,6 +188,7 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 		tfDocumentacion.setText("");
 		lImagen.setIcon(null);
 		ficheroSeleccionado=null;
+		panelBusqueda.lista.clearSelection();
 	}
 
 	public void refrescarPanel() {
@@ -206,7 +207,6 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 			case "nuevoEmpleado":
 				limpiar();
 				modoEdicion(true);
-				panelBusqueda.lista.clearSelection();
 				accion = Accion.NUEVO;
 				break;
 			case "editarEmpleado":
@@ -284,18 +284,17 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 					System.out.println("Error al guardar la imagen (puede que esté repetida).");
 				}
 				
+				limpiar();
 				refrescarPanel();
-				
 				break;
 			case "eliminarEmpleado":
-				limpiar();
 				empleado = panelBusqueda.getSeleccionado();
 				modelo.eliminar(empleado);
+				limpiar();
 				refrescarPanel();
 				break;
 			case "cancelarEmpleado":
 				limpiar();
-				panelBusqueda.lista.clearSelection();
 				modoInicio(true);
 				break;
 				

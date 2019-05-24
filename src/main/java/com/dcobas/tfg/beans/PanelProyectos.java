@@ -210,6 +210,8 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		tfEmpleados.setText("");
 		lImagen.setIcon(null);
 		ficheroSeleccionado=null;
+		panelBusqueda.lista.clearSelection();
+		panelAnadirEmpleado.limpiarEmpleados();
 	}
 
 	@Override
@@ -220,15 +222,8 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		switch (actionCommand) {
 		
 			case "nuevoProyecto":
-				tfNombre.setText("");
-				tfEmpresa.setText("");
-				tfTipo.setText("");
-				taDescripcion.setText("");
-				tfFechaInicio.setText("");
-				tfEmpleados.setText("");
-				lImagen.setIcon(null);
-				panelBusqueda.lista.clearSelection();
-				panelAnadirEmpleado.limpiarEmpleados();
+				limpiar();
+				refrescarPanel();
 				accion = Accion.NUEVO;
 				modoEdicion(true);
 				break;
@@ -304,28 +299,13 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 				refrescarPanel();
 				break;
 			case "eliminarProyecto":
-				tfNombre.setText("");
-				tfEmpresa.setText("");
-				tfTipo.setText("");
-				taDescripcion.setText("");
-				tfFechaInicio.setText("");
-				tfEmpleados.setText("");
-				lImagen.setIcon(null);
 				proyecto = panelBusqueda.getSeleccionado();
 				modelo.eliminar(proyecto);
-				panelBusqueda.lista.clearSelection();
+				limpiar();
 				refrescarPanel();
 				break;
 			case "cancelarProyecto":
-				tfNombre.setText("");
-				tfEmpresa.setText("");
-				tfTipo.setText("");
-				taDescripcion.setText("");
-				tfFechaInicio.setText("");
-				tfEmpleados.setText("");
-				lImagen.setIcon(null);
-				panelBusqueda.lista.clearSelection();
-				panelAnadirEmpleado.limpiarEmpleados();
+				limpiar();
 				modoInicio(true);
 				break;
 			case "eliminarProyectos":
