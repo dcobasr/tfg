@@ -41,8 +41,9 @@ public class Controlador {
 		this.vista = vista;
 		this.modelo = modelo;
 		
-//		iniciarSesion();
-//		vista.jEstado.setMensajeError("Bienvenido a Proyectos "+constantes.versionAplicacion);
+		constantes= new Constantes();
+		
+		iniciarSesion();
 		
 //		refrescarProyectos();
 //		refrescarEmpleados();
@@ -77,21 +78,23 @@ public class Controlador {
 				Util.mensajeError("No se ha podido conectar por algo");
 			}
 		} while (!autenticado);
+		System.out.println(vista.jEstado);
+		vista.jEstado.setMensajeConfirmacion("Bienvenido a "+constantes.nombreAplicacion+" "+constantes.versionAplicacion+" de "+constantes.creador);
 	}
 
-	private void refrescarProyectos() {
-		List<Proyecto> proyectos = modelo.getProyectos();
-		vista.mProyectos.removeAllElements();
-		for (Proyecto proyecto : proyectos) 
-			vista.mProyectos.addElement(proyecto);
-	}
-	
-	private void refrescarEmpleados() {
-		List<Empleado> empleados = modelo.getEmpleados();
-		vista.mEmpleados.removeAllElements();
-		for (Empleado empleado : empleados) 
-			vista.mEmpleados.addElement(empleado);
-	}
+//	private void refrescarProyectos() {
+//		List<Proyecto> proyectos = modelo.getProyectos();
+//		vista.mProyectos.removeAllElements();
+//		for (Proyecto proyecto : proyectos) 
+//			vista.mProyectos.addElement(proyecto);
+//	}
+//	
+//	private void refrescarEmpleados() {
+//		List<Empleado> empleados = modelo.getEmpleados();
+//		vista.mEmpleados.removeAllElements();
+//		for (Empleado empleado : empleados) 
+//			vista.mEmpleados.addElement(empleado);
+//	}
 	
 	/*
 	@Override

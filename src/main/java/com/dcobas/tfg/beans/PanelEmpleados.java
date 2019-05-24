@@ -262,6 +262,7 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 						break;
 					case MODIFICAR:
 						empleado = panelBusqueda.getSeleccionado();
+						nombreImagen= empleado.getNombreImagen();
 						break;
 					default:
 						Util.mensajeError("Operación desconocida");

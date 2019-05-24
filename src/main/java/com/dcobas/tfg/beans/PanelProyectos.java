@@ -280,6 +280,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 						break;
 					case MODIFICAR:
 						proyecto = panelBusqueda.getSeleccionado();
+						nombreImagen= proyecto.getNombreImagen();
 						break;
 					default:
 						Util.mensajeError("Operación desconocida");
@@ -343,6 +344,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		if(e.getSource()==panelBusqueda.lista) {
+			
 			Proyecto proyecto = panelBusqueda.getSeleccionado();
 			if (proyecto == null)
 				return;

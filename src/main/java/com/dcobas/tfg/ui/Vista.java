@@ -28,16 +28,11 @@ import com.dcobas.tfg.beans.PanelAnadirEmpleado;
 public class Vista extends JFrame{
 
 	public JPanel contentPane;
-	
-	public DefaultListModel<Proyecto> mProyectos;
-	public DefaultListModel<Empleado> mEmpleados;
-	
 	public JTabbedPane tabbedPane;
 	public PanelEmpleados panelEmpleados;
 	public PanelProyectos panelProyectos;
 
 	public JEstado jEstado;
-	public Constantes constantes;
 	public Modelo modelo;
 	
 	public Vista() {
@@ -47,19 +42,6 @@ public class Vista extends JFrame{
 		setPreferredSize(new Dimension(800, 400));
 		
 		setTitle("Prodeck");
-//		System.out.println(getClass());
-//		System.out.println(getClass().getPackage());
-//		System.out.println(getClass().getResource("edit-6.png"));
-//		System.out.println(getClass().getResource("resources/edit-6.png"));
-//		System.out.println(getClass().getResource("../../../../resources/edit-6.png"));
-//		System.out.println(getClass().getResource("../../../../../../../resources/edit-6.png"));
-		
-//		En el mismo paquete:
-//		Image icon = new ImageIcon(getClass().getResource("edit-6.png")).getImage();
-		
-//		En el paquete resources
-//		Image icon = new ImageIcon(getClass().getResource("../../../../resources/edit-6.png")).getImage();
-//        setIconImage(icon);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 875, 484);
 		
@@ -69,8 +51,6 @@ public class Vista extends JFrame{
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		jEstado = new JEstado();
-		constantes= new Constantes();
-		jEstado.setMensajeConfirmacion("Bienvenido a "+constantes.nombreAplicacion+" "+constantes.versionAplicacion+" de "+constantes.creador);
 		contentPane.add(jEstado, BorderLayout.SOUTH);
 		
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -83,9 +63,6 @@ public class Vista extends JFrame{
 		
 		
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
-		
-		mProyectos = new DefaultListModel<>();
-		mEmpleados = new DefaultListModel<>();
 		
 		try {
 	        UIManager.setLookAndFeel(
