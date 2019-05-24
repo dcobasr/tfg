@@ -49,10 +49,6 @@ public class Modelo {
 		Session sesion = HibernateUtil.getCurrentSession();
 		sesion.beginTransaction();
 		sesion.save(proyecto);
-//		for (Empleado empleado: proyecto.getEmpleados()) {
-//			empleado.setProyecto(proyecto);
-//			sesion.save(empleado);
-//		}
 		sesion.getTransaction().commit();
 		sesion.close();
 	}
@@ -85,15 +81,9 @@ public class Modelo {
 	}
 	
 	public List<Proyecto> getProyectos() {
-		
 		Session sesion = HibernateUtil.getCurrentSession();
 		ArrayList<Proyecto> proyectos = (ArrayList<Proyecto>) sesion.createQuery("FROM Proyecto").list();
 		return proyectos;
-	}
-	
-	public List<Empleado> getEmpleados(String busqueda) {
-		
-		return null;
 	}
 	
 	public void guardar(Empleado empleado) {
@@ -112,16 +102,16 @@ public class Modelo {
 		sesion.close();
 	}
 	
+	public void eliminarEmpleados() {
+		Session sesion = HibernateUtil.getCurrentSession();
+		Query<Empleado> query = sesion.createQuery("DELETE * FROM Proyecto");
+		query.executeUpdate();
+		sesion.close();
+	}
+	
 	public List<Empleado> getEmpleados() {
 		Session sesion = HibernateUtil.getCurrentSession();
 		ArrayList<Empleado> empleados = (ArrayList<Empleado>) sesion.createQuery("FROM Empleado").list();
-		return empleados;
-	}
-	
-	public List<Empleado> getEmpleadosLibres() {
-		Session sesion = HibernateUtil.getCurrentSession();
-		List<Empleado> empleados = (ArrayList<Empleado>) 
-				sesion.createQuery("FROM Empleado p WHERE p.proyecto IS NULL").list();
 		return empleados;
 	}
 }

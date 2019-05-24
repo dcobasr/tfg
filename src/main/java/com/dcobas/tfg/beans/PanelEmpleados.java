@@ -301,6 +301,9 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 				break;
 				
 			case "eliminarEmpleados":
+				modelo.eliminarEmpleados();
+				limpiar();
+				modoInicio(true);
 				break;
 		}
 		
