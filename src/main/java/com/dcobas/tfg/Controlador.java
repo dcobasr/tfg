@@ -27,7 +27,7 @@ public class Controlador implements ActionListener, MouseListener {
 		this.modelo = modelo;
 		
 		constantes= new Constantes();
-//		iniciarSesion();
+		iniciarSesion();
 		inicializar();
 		
 	}
