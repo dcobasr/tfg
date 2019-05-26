@@ -193,12 +193,24 @@ public class Controlador implements ActionListener, MouseListener {
 				vista.panelProyectos.modoInicio(true);
 				break;
 			case "eliminarProyectos":
-				modelo.eliminarProyectos();
-				vista.panelProyectos.limpiar();
-				vista.panelProyectos.modoInicio(true);
-				refrescarPaneles();
+				try {
+					int n=JOptionPane.showConfirmDialog(null,
+							"¿Estás seguro de que quieres eliminar todos los proyectos?",
+							"   ATENCIÓN",
+							JOptionPane.YES_NO_OPTION,
+							JOptionPane.WARNING_MESSAGE);
+					if(n==0) {
+						modelo.eliminarProyectos();
+						vista.panelProyectos.limpiar();
+						vista.panelProyectos.modoInicio(true);
+						refrescarPaneles();
+						break;
+					}
+				} catch (Exception ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				}
 				break;
-			
 				
 			//Panel Empleados
 			case "nuevoEmpleado":
@@ -297,10 +309,23 @@ public class Controlador implements ActionListener, MouseListener {
 				break;
 				
 			case "eliminarEmpleados":
-				modelo.eliminarEmpleados();
-				vista.panelEmpleados.limpiar();
-				vista.panelEmpleados.modoInicio(true);
-				refrescarPaneles();
+				try {
+					int n=JOptionPane.showConfirmDialog(null,
+							"¿Estás seguro de que quieres eliminar todos los empleados?",
+							"   ATENCIÓN",
+							JOptionPane.YES_NO_OPTION,
+							JOptionPane.WARNING_MESSAGE);
+					if(n==0) {
+						modelo.eliminarEmpleados();
+						vista.panelEmpleados.limpiar();
+						vista.panelEmpleados.modoInicio(true);
+						refrescarPaneles();
+						break;
+					}
+				} catch (Exception ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				}
 				break;
 		}
 		
