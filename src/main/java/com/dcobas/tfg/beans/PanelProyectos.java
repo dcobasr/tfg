@@ -42,11 +42,11 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 	public PanelBusqueda<Proyecto> panelBusqueda;
 	public JBotonesCrud botonesCrud;
 	public PanelAnadirEmpleado panelAnadirEmpleado;
-	private Accion accion;
+	public Accion accion;
 	
-	private File ficheroSeleccionado;
-	private boolean editar=false;
-	private boolean activarJFileChooser=false;
+	public File ficheroSeleccionado;
+	public boolean editar=false;
+	public boolean activarJFileChooser=false;
 	
 	private Modelo modelo;
 	
@@ -129,21 +129,15 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		panelAnadirEmpleado = new PanelAnadirEmpleado();
 		panelAnadirEmpleado.setBounds(566, 11, 260, 185);
 		add(panelAnadirEmpleado);
-		
-		inicializar();
 
 	}
 	
-	private void inicializar() {
-		botonesCrud.addListeners(this);
-		panelBusqueda.addListener(this);
-		lImagen.addMouseListener(this);
-		
+	public void inicializar() {
 		panelBusqueda.inicializar(modelo.getProyectos());
 		modoInicio(true);
 	}
 	
-	private void modoEdicion(boolean edicion) {
+	public void modoEdicion(boolean edicion) {
 		tfNombre.setEditable(edicion);
 		tfEmpresa.setEditable(edicion);
 		tfTipo.setEditable(edicion);
@@ -156,7 +150,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		botonesCrud.modoEdicion(edicion);
 	}
 	
-	private void modoInicio(boolean edicion) {
+	public void modoInicio(boolean edicion) {
 		modoEdicion(!edicion);
 		
 		panelBusqueda.lista.clearSelection();
@@ -165,7 +159,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		botonesCrud.btEliminar.setEnabled(!edicion);
 	}
 	
-	private void cargar(Proyecto proyecto) {
+	public void cargar(Proyecto proyecto) {
 		tfNombre.setText(proyecto.getNombre());
 		tfEmpresa.setText(proyecto.getEmpresa());
 		tfTipo.setText(proyecto.getTipo());

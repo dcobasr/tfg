@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -64,9 +65,8 @@ public class Modelo {
 	public void eliminarProyectos() {
 		Session sesion = HibernateUtil.getCurrentSession();
 		sesion.beginTransaction();
-		for (Proyecto proyecto : getProyectos()) {
-			sesion.delete(proyecto);
-		}
+		Query<Proyecto> query = sesion.createQuery("DELETE FROM Proyecto");
+		query.executeUpdate();
 		sesion.getTransaction().commit();
 		sesion.close();
 	}
@@ -104,8 +104,10 @@ public class Modelo {
 	
 	public void eliminarEmpleados() {
 		Session sesion = HibernateUtil.getCurrentSession();
-		Query<Empleado> query = sesion.createQuery("DELETE * FROM Proyecto");
+		sesion.beginTransaction();
+		Query<Proyecto> query = sesion.createQuery("DELETE FROM Empleado");
 		query.executeUpdate();
+		sesion.getTransaction().commit();
 		sesion.close();
 	}
 	

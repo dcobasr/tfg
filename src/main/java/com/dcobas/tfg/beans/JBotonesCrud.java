@@ -22,7 +22,8 @@ public class JBotonesCrud extends JPanel {
 		
 		btNuevo = new JButton("N");
 		try {
-			btNuevo.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/list-add.png")));
+//			btNuevo.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/list-add.png")));
+			btNuevo.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\DAM2\\TFG\\resources\\icons\\list-add.png"));
 			btNuevo.setText("");
 		}
 		catch (Exception e) {
@@ -34,7 +35,8 @@ public class JBotonesCrud extends JPanel {
 		
 		btEditar = new JButton("E");
 		try {
-			btEditar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/edit-6.png")));
+//			btEditar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/edit-6.png")));
+			btEditar.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\DAM2\\TFG\\resources\\icons\\edit-6.png"));
 			btEditar.setText("");
 		}
 		catch (Exception e) {
@@ -47,7 +49,8 @@ public class JBotonesCrud extends JPanel {
 		
 		btEliminar = new JButton("D");
 		try {
-			btEliminar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/draw-eraser-2.png")));
+//			btEliminar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/draw-eraser-2.png")));
+			btEliminar.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\DAM2\\TFG\\resources\\icons\\draw-eraser-2.png"));
 			btEliminar.setText("");
 		}
 		catch (Exception e) {
@@ -60,7 +63,8 @@ public class JBotonesCrud extends JPanel {
 		
 		btConfirmar = new JButton("A");
 		try {
-			btConfirmar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/dialog-accept.png")));
+//			btConfirmar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/dialog-accept.png")));
+			btConfirmar.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\DAM2\\TFG\\resources\\icons\\dialog-accept.png"));
 			btConfirmar.setText("");
 		}
 		catch (Exception e) {
@@ -73,7 +77,8 @@ public class JBotonesCrud extends JPanel {
 		
 		btCancelar = new JButton("C");
 		try {
-			btCancelar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/dialog-cancel-7.png")));
+//			btCancelar.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/dialog-cancel-7.png")));
+			btCancelar.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\DAM2\\TFG\\resources\\icons\\dialog-cancel-7.png"));
 			btCancelar.setText("");
 		}
 		catch (Exception e) {
@@ -86,7 +91,8 @@ public class JBotonesCrud extends JPanel {
 		
 		btEliminarTodo = new JButton("X");
 		try {
-			btEliminarTodo.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/edit-delete-2.png")));
+//			btEliminarTodo.setIcon(new ImageIcon(JBotonesCrud.class.getResource("/edit-delete-2.png")));
+			btEliminarTodo.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\DAM2\\TFG\\resources\\icons\\edit-delete-2.png"));
 			btEliminarTodo.setText("");
 		}
 		catch (Exception e) {

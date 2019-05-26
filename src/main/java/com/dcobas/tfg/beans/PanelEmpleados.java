@@ -38,12 +38,12 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 	public JTextField tfSector;
 	public JTextField tfDocumentacion;
 	
-	private File ficheroSeleccionado;
-	private boolean activarJFileChooser=false;
-	private boolean editar=false;
+	public File ficheroSeleccionado;
+	public boolean activarJFileChooser=false;
+	public boolean editar=false;
 	
 	private Modelo modelo;
-	private Accion accion;
+	public Accion accion;
 	
 	public PanelEmpleados(Modelo modelo) {
 		this.modelo=modelo;
@@ -122,28 +122,22 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 		tfDocumentacion.setBounds(455, 245, 179, 20);
 		add(tfDocumentacion);
 		tfDocumentacion.setColumns(10);
-		
-		inicializar();
 
 	}
 	
-	private void inicializar() {
-		botonesCrud.addListeners(this);
-		panelBusqueda.addListener(this);
-		lImagen.addMouseListener(this);
-		
+	public void inicializar() {		
 		panelBusqueda.inicializar(modelo.getEmpleados());
 		modoInicio(true);
 	}
 	
-	private void modoInicio(boolean edicion) {
+	public void modoInicio(boolean edicion) {
 		modoEdicion(!edicion);
 		
 		botonesCrud.btEditar.setEnabled(!edicion);
 		botonesCrud.btEliminar.setEnabled(!edicion);
 	}
 	
-	private void modoEdicion(boolean edicion) {
+	public void modoEdicion(boolean edicion) {
 		tfNombre.setEditable(edicion);
 		tfApellidos.setEditable(edicion);
 		tfEdad.setEditable(edicion);
@@ -155,7 +149,7 @@ public class PanelEmpleados extends JPanel implements ActionListener, MouseListe
 		botonesCrud.modoEdicion(edicion);
 	}
 	
-	private void cargar(Empleado empleado) {
+	public void cargar(Empleado empleado) {
 		tfNombre.setText(empleado.getNombre());
 		tfApellidos.setText(empleado.getApellidos());
 		tfEdad.setText(String.valueOf(empleado.getEdad()));
