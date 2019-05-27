@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
 
 public class Login extends JDialog implements ActionListener, KeyListener {
 
@@ -33,6 +34,7 @@ public class Login extends JDialog implements ActionListener, KeyListener {
 	private String contrasena;
 
 	public Login() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/javax/swing/plaf/metal/icons/Warn.gif")));
 		setTitle("Login");
 		setBounds(100, 100, 295, 184);
 		getContentPane().setLayout(new BorderLayout());

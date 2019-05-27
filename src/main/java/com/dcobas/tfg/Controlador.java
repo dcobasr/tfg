@@ -51,7 +51,7 @@ public class Controlador implements ActionListener, MouseListener {
 						System.exit(0);
 					}
 					login.limpiarContrasena();
-					login.setMensaje("Usuario/Contraseña incorrectos");
+					login.setMensaje("  Usuario/Contraseña incorrectos");
 					intentos++;
 					continue;
 				}

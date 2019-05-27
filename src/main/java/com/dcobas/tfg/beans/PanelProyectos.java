@@ -165,7 +165,7 @@ public class PanelProyectos extends JPanel implements ActionListener, MouseListe
 		tfTipo.setText(proyecto.getTipo());
 		taDescripcion.setText(proyecto.getDescripcion());
 		tfFechaInicio.setText(proyecto.getFechaInicio());
-		tfEmpleados.setText(proyecto.getDescripcion());
+		tfEmpleados.setText(String.valueOf(proyecto.getNumeroEmpleados()));
 		panelAnadirEmpleado.anadirEmpleados((proyecto.getEmpleados()));
 		ImageIcon imageIcon = new ImageIcon(
 				new ImageIcon(Util.rutaImagenes+proyecto.getNombreImagen()).
